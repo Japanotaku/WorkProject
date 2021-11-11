@@ -1,6 +1,17 @@
-CREATE TABLE products (id serial, title varchar(100), price int);
 
-INSERT INTO products (title, price) VALUES ('Bread', 40), ('Milk', 80);
+
+CREATE TABLE students (id serial,lastname varchar(100),firstname varchar(100),city varchar(100),gpa numeric(6,2));
+
+INSERT INTO students (lastname, firstname, city, gpa) VALUES
+('Altai','Kerimov','Almaty',3.00),
+('Dastan','Tleygaziev','Almaty',4.00),
+('Zhangali','Amanbek','Almaty',6.00),
+('Miras','Orysbay','Moscow',7.00),
+('Igor','Hope','Almaty',3.00),
+('Love','Filly','Astana',2.00),
+('Abai','Mametov','Almaty',1.00);
+
+
 
 CREATE TABLE users (
     username VARCHAR(50) NOT NULL,
@@ -11,8 +22,8 @@ CREATE TABLE users (
 
 INSERT INTO users
 VALUES
-('user1', '{noop}123', true),
-('user2', '{noop}123', true);
+('ADMIN', '{noop}123', true),
+('CUSTOMER', '{noop}123', true);
 
 CREATE TABLE authorities (
     username varchar(50) NOT NULL,
@@ -27,6 +38,5 @@ CREATE TABLE authorities (
 
 INSERT INTO authorities
 VALUES
-('user1', 'ROLE_ADMIN'),
-('user1', 'ROLE_USER'),
-('user2', 'ROLE_USER');
+('ADMIN', 'ROLE_ADMIN'),
+('CUSTOMER', 'ROLE_USER');
